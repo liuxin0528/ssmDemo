@@ -79,7 +79,7 @@
 
 	<aop:config>
 		<aop:pointcut id="transactionmobilePointCut"
-			expression="execution(* com.zongheng.ssm.**.service..*(..))" />
+			expression="execution(* com.zongheng.ssm.*.*.service..*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionmobilePointCut" />
 	</aop:config>
 	
