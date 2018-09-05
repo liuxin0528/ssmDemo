@@ -9,6 +9,6 @@
     </settings>
 
     <typeAliases>
-    	 <package name="com.zehin.vpaas.base.domain"/>  
+    	 <package name="com.zongheng.ssm.base.domain"/>
     </typeAliases>
 </configuration>

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zongheng.ssm.dao.TdMStaffDao;
-import com.zongheng.ssm.mapping.TdMStaff;
+import com.zongheng.ssm.base.domain.TdMStaff;
 import com.zongheng.ssm.service.ItdMStaffService;
 
 @Service
@@ -15,7 +15,7 @@ public class TdMStaffServiceImpl implements ItdMStaffService{
 
 	@Override
 	public TdMStaff getStaffById(String staffId) {
-		System.out.println("½øÈëµ½TdMStaffServiceImplÖÐ²éÑ¯Êý¾Ý¡£¡£¡£¡£¡£¡£");
+		System.out.println("ï¿½ï¿½ï¿½ëµ½TdMStaffServiceImplï¿½Ð²ï¿½Ñ¯ï¿½ï¿½ï¿½Ý¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		TdMStaff staff = tdMStaffDao.selectByPrimaryKey(staffId);
 		return staff;
 	}

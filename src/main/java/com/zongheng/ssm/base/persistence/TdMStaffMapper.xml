@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zongheng.ssm.base.persistence.TdMStaffMapper" >
+
+  <resultMap id="BaseResultMap" type="com.zongheng.ssm.base.domain.TdMStaff" >
+    <id column="STAFF_ID" property="staffId" jdbcType="VARCHAR" />
+    <result column="DEPART_ID" property="departId" jdbcType="VARCHAR" />
+    <result column="STAFF_NAME" property="staffName" jdbcType="VARCHAR" />
+    <result column="JOB_CODE" property="jobCode" jdbcType="VARCHAR" />
+    <result column="MANAGER_INFO" property="managerInfo" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="USER_PID" property="userPid" jdbcType="VARCHAR" />
+    <result column="SERIAL_NUMBER" property="serialNumber" jdbcType="VARCHAR" />
+    <result column="CONTACT_TEL" property="contactTel" jdbcType="VARCHAR" />
+    <result column="DIMISSION_TAG" property="dimissionTag" jdbcType="VARCHAR" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="STAFF_GROUP_ID" property="staffGroupId" jdbcType="DECIMAL" />
+    <result column="CONTACT_ADDR" property="contactAddr" jdbcType="VARCHAR" />
+    <result column="CONTACT_ZIP" property="contactZip" jdbcType="VARCHAR" />
+    <result column="CONTACT_FAX" property="contactFax" jdbcType="VARCHAR" />
+    <result column="EDUCATION" property="education" jdbcType="VARCHAR" />
+    <result column="NATION" property="nation" jdbcType="VARCHAR" />
+    <result column="POLITICAL" property="political" jdbcType="VARCHAR" />
+    <result column="IN_COMPANY_DATE" property="inCompanyDate" jdbcType="TIMESTAMP" />
+    <result column="IN_STATION_DATE" property="inStationDate" jdbcType="TIMESTAMP" />
+    <result column="CUST_MANAGER_FLAG" property="custManagerFlag" jdbcType="VARCHAR" />
+    <result column="MANAGER_STAFF_ID" property="managerStaffId" jdbcType="VARCHAR" />
+    <result column="LOGIN_FLAG" property="loginFlag" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="START_DATE" property="startDate" jdbcType="DATE" />
+    <result column="END_DATE" property="endDate" jdbcType="DATE" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="DATE" />
+    <result column="UPDATE_STAFF_ID" property="updateStaffId" jdbcType="VARCHAR" />
+    <result column="UPDATE_DEPART_ID" property="updateDepartId" jdbcType="VARCHAR" />
+    <result column="Emer_link_man" property="emerLinkMan" jdbcType="VARCHAR" />
+    <result column="Emer_phone" property="emerPhone" jdbcType="VARCHAR" />
+    <result column="Emer_rel" property="emerRel" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="VARCHAR" />
+    <result column="professional" property="professional" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STAFF_ID, DEPART_ID, STAFF_NAME, JOB_CODE, MANAGER_INFO, SEX, EMAIL, USER_PID, SERIAL_NUMBER, 
+    CONTACT_TEL, DIMISSION_TAG, BIRTHDAY, STAFF_GROUP_ID, CONTACT_ADDR, CONTACT_ZIP, 
+    CONTACT_FAX, EDUCATION, NATION, POLITICAL, IN_COMPANY_DATE, IN_STATION_DATE, CUST_MANAGER_FLAG, 
+    MANAGER_STAFF_ID, LOGIN_FLAG, REMARK, START_DATE, END_DATE, UPDATE_TIME, UPDATE_STAFF_ID, 
+    UPDATE_DEPART_ID, Emer_link_man, Emer_phone, Emer_rel, school, professional
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from td_m_staff
+    where STAFF_ID = #{staffId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from td_m_staff
+    where STAFF_ID = #{staffId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zongheng.ssm.base.domain.TdMStaff" >
+    insert into td_m_staff (STAFF_ID, DEPART_ID, STAFF_NAME, 
+      JOB_CODE, MANAGER_INFO, SEX, 
+      EMAIL, USER_PID, SERIAL_NUMBER, 
+      CONTACT_TEL, DIMISSION_TAG, BIRTHDAY, 
+      STAFF_GROUP_ID, CONTACT_ADDR, CONTACT_ZIP, 
+      CONTACT_FAX, EDUCATION, NATION, 
+      POLITICAL, IN_COMPANY_DATE, IN_STATION_DATE, 
+      CUST_MANAGER_FLAG, MANAGER_STAFF_ID, LOGIN_FLAG, 
+      REMARK, START_DATE, END_DATE, 
+      UPDATE_TIME, UPDATE_STAFF_ID, UPDATE_DEPART_ID, 
+      Emer_link_man, Emer_phone, Emer_rel, 
+      school, professional)
+    values (#{staffId,jdbcType=VARCHAR}, #{departId,jdbcType=VARCHAR}, #{staffName,jdbcType=VARCHAR}, 
+      #{jobCode,jdbcType=VARCHAR}, #{managerInfo,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{userPid,jdbcType=VARCHAR}, #{serialNumber,jdbcType=VARCHAR}, 
+      #{contactTel,jdbcType=VARCHAR}, #{dimissionTag,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, 
+      #{staffGroupId,jdbcType=DECIMAL}, #{contactAddr,jdbcType=VARCHAR}, #{contactZip,jdbcType=VARCHAR}, 
+      #{contactFax,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, 
+      #{political,jdbcType=VARCHAR}, #{inCompanyDate,jdbcType=TIMESTAMP}, #{inStationDate,jdbcType=TIMESTAMP}, 
+      #{custManagerFlag,jdbcType=VARCHAR}, #{managerStaffId,jdbcType=VARCHAR}, #{loginFlag,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, 
+      #{updateTime,jdbcType=DATE}, #{updateStaffId,jdbcType=VARCHAR}, #{updateDepartId,jdbcType=VARCHAR}, 
+      #{emerLinkMan,jdbcType=VARCHAR}, #{emerPhone,jdbcType=VARCHAR}, #{emerRel,jdbcType=VARCHAR}, 
+      #{school,jdbcType=VARCHAR}, #{professional,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zongheng.ssm.base.domain.TdMStaff" >
+    insert into td_m_staff
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="staffId != null" >
+        STAFF_ID,
+      </if>
+      <if test="departId != null" >
+        DEPART_ID,
+      </if>
+      <if test="staffName != null" >
+        STAFF_NAME,
+      </if>
+      <if test="jobCode != null" >
+        JOB_CODE,
+      </if>
+      <if test="managerInfo != null" >
+        MANAGER_INFO,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="userPid != null" >
+        USER_PID,
+      </if>
+      <if test="serialNumber != null" >
+        SERIAL_NUMBER,
+      </if>
+      <if test="contactTel != null" >
+        CONTACT_TEL,
+      </if>
+      <if test="dimissionTag != null" >
+        DIMISSION_TAG,
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY,
+      </if>
+      <if test="staffGroupId != null" >
+        STAFF_GROUP_ID,
+      </if>
+      <if test="contactAddr != null" >
+        CONTACT_ADDR,
+      </if>
+      <if test="contactZip != null" >
+        CONTACT_ZIP,
+      </if>
+      <if test="contactFax != null" >
+        CONTACT_FAX,
+      </if>
+      <if test="education != null" >
+        EDUCATION,
+      </if>
+      <if test="nation != null" >
+        NATION,
+      </if>
+      <if test="political != null" >
+        POLITICAL,
+      </if>
+      <if test="inCompanyDate != null" >
+        IN_COMPANY_DATE,
+      </if>
+      <if test="inStationDate != null" >
+        IN_STATION_DATE,
+      </if>
+      <if test="custManagerFlag != null" >
+        CUST_MANAGER_FLAG,
+      </if>
+      <if test="managerStaffId != null" >
+        MANAGER_STAFF_ID,
+      </if>
+      <if test="loginFlag != null" >
+        LOGIN_FLAG,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="startDate != null" >
+        START_DATE,
+      </if>
+      <if test="endDate != null" >
+        END_DATE,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="updateStaffId != null" >
+        UPDATE_STAFF_ID,
+      </if>
+      <if test="updateDepartId != null" >
+        UPDATE_DEPART_ID,
+      </if>
+      <if test="emerLinkMan != null" >
+        Emer_link_man,
+      </if>
+      <if test="emerPhone != null" >
+        Emer_phone,
+      </if>
+      <if test="emerRel != null" >
+        Emer_rel,
+      </if>
+      <if test="school != null" >
+        school,
+      </if>
+      <if test="professional != null" >
+        professional,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="staffId != null" >
+        #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="departId != null" >
+        #{departId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffName != null" >
+        #{staffName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCode != null" >
+        #{jobCode,jdbcType=VARCHAR},
+      </if>
+      <if test="managerInfo != null" >
+        #{managerInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="userPid != null" >
+        #{userPid,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNumber != null" >
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTel != null" >
+        #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="dimissionTag != null" >
+        #{dimissionTag,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="staffGroupId != null" >
+        #{staffGroupId,jdbcType=DECIMAL},
+      </if>
+      <if test="contactAddr != null" >
+        #{contactAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="contactZip != null" >
+        #{contactZip,jdbcType=VARCHAR},
+      </if>
+      <if test="contactFax != null" >
+        #{contactFax,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="political != null" >
+        #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="inCompanyDate != null" >
+        #{inCompanyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inStationDate != null" >
+        #{inStationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="custManagerFlag != null" >
+        #{custManagerFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="managerStaffId != null" >
+        #{managerStaffId,jdbcType=VARCHAR},
+      </if>
+      <if test="loginFlag != null" >
+        #{loginFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateStaffId != null" >
+        #{updateStaffId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDepartId != null" >
+        #{updateDepartId,jdbcType=VARCHAR},
+      </if>
+      <if test="emerLinkMan != null" >
+        #{emerLinkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="emerPhone != null" >
+        #{emerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="emerRel != null" >
+        #{emerRel,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="professional != null" >
+        #{professional,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zongheng.ssm.base.domain.TdMStaff" >
+    update td_m_staff
+    <set >
+      <if test="departId != null" >
+        DEPART_ID = #{departId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffName != null" >
+        STAFF_NAME = #{staffName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCode != null" >
+        JOB_CODE = #{jobCode,jdbcType=VARCHAR},
+      </if>
+      <if test="managerInfo != null" >
+        MANAGER_INFO = #{managerInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="userPid != null" >
+        USER_PID = #{userPid,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNumber != null" >
+        SERIAL_NUMBER = #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTel != null" >
+        CONTACT_TEL = #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="dimissionTag != null" >
+        DIMISSION_TAG = #{dimissionTag,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="staffGroupId != null" >
+        STAFF_GROUP_ID = #{staffGroupId,jdbcType=DECIMAL},
+      </if>
+      <if test="contactAddr != null" >
+        CONTACT_ADDR = #{contactAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="contactZip != null" >
+        CONTACT_ZIP = #{contactZip,jdbcType=VARCHAR},
+      </if>
+      <if test="contactFax != null" >
+        CONTACT_FAX = #{contactFax,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        EDUCATION = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null" >
+        NATION = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="political != null" >
+        POLITICAL = #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="inCompanyDate != null" >
+        IN_COMPANY_DATE = #{inCompanyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inStationDate != null" >
+        IN_STATION_DATE = #{inStationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="custManagerFlag != null" >
+        CUST_MANAGER_FLAG = #{custManagerFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="managerStaffId != null" >
+        MANAGER_STAFF_ID = #{managerStaffId,jdbcType=VARCHAR},
+      </if>
+      <if test="loginFlag != null" >
+        LOGIN_FLAG = #{loginFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        START_DATE = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        END_DATE = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateStaffId != null" >
+        UPDATE_STAFF_ID = #{updateStaffId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDepartId != null" >
+        UPDATE_DEPART_ID = #{updateDepartId,jdbcType=VARCHAR},
+      </if>
+      <if test="emerLinkMan != null" >
+        Emer_link_man = #{emerLinkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="emerPhone != null" >
+        Emer_phone = #{emerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="emerRel != null" >
+        Emer_rel = #{emerRel,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="professional != null" >
+        professional = #{professional,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where STAFF_ID = #{staffId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zongheng.ssm.base.domain.TdMStaff" >
+    update td_m_staff
+    set DEPART_ID = #{departId,jdbcType=VARCHAR},
+      STAFF_NAME = #{staffName,jdbcType=VARCHAR},
+      JOB_CODE = #{jobCode,jdbcType=VARCHAR},
+      MANAGER_INFO = #{managerInfo,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      USER_PID = #{userPid,jdbcType=VARCHAR},
+      SERIAL_NUMBER = #{serialNumber,jdbcType=VARCHAR},
+      CONTACT_TEL = #{contactTel,jdbcType=VARCHAR},
+      DIMISSION_TAG = #{dimissionTag,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      STAFF_GROUP_ID = #{staffGroupId,jdbcType=DECIMAL},
+      CONTACT_ADDR = #{contactAddr,jdbcType=VARCHAR},
+      CONTACT_ZIP = #{contactZip,jdbcType=VARCHAR},
+      CONTACT_FAX = #{contactFax,jdbcType=VARCHAR},
+      EDUCATION = #{education,jdbcType=VARCHAR},
+      NATION = #{nation,jdbcType=VARCHAR},
+      POLITICAL = #{political,jdbcType=VARCHAR},
+      IN_COMPANY_DATE = #{inCompanyDate,jdbcType=TIMESTAMP},
+      IN_STATION_DATE = #{inStationDate,jdbcType=TIMESTAMP},
+      CUST_MANAGER_FLAG = #{custManagerFlag,jdbcType=VARCHAR},
+      MANAGER_STAFF_ID = #{managerStaffId,jdbcType=VARCHAR},
+      LOGIN_FLAG = #{loginFlag,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      START_DATE = #{startDate,jdbcType=DATE},
+      END_DATE = #{endDate,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      UPDATE_STAFF_ID = #{updateStaffId,jdbcType=VARCHAR},
+      UPDATE_DEPART_ID = #{updateDepartId,jdbcType=VARCHAR},
+      Emer_link_man = #{emerLinkMan,jdbcType=VARCHAR},
+      Emer_phone = #{emerPhone,jdbcType=VARCHAR},
+      Emer_rel = #{emerRel,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      professional = #{professional,jdbcType=VARCHAR}
+    where STAFF_ID = #{staffId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zongheng.ssm.mapping.TdMStaff;
+import com.zongheng.ssm.base.domain.TdMStaff;
 import com.zongheng.ssm.service.ItdMStaffService;
 
 /**
@@ -23,11 +23,11 @@ public class TdMStaffController {
 
 	@RequestMapping("/queryStaff")
 	public String queryStaff(){
-		System.out.println("½øÈëµ½ÁËcontrollerÖÐ");
+		System.out.println("ï¿½ï¿½ï¿½ëµ½ï¿½ï¿½controllerï¿½ï¿½");
 		
 		TdMStaff staff = itdMStaffService.getStaffById("000077");
 		
-		System.out.println("000077ºÅµÄÈËÐÕÃûÊÇ£º" + staff.getStaffName());
+		System.out.println("000077ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½" + staff.getStaffName());
 		
 		return "staff";
 	}
