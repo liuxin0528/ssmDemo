@@ -50,7 +50,7 @@
 	
 	<!-- DAO接口所在包名，Spring会自动查找其下的类:映射接口类文件(.java)和映射XML文件(.xml)需要放在相同的包下 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.zongheng.ssm.dao"></property>
+		<property name="basePackage" value="com.zongheng.ssm.base.persistence"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
 	

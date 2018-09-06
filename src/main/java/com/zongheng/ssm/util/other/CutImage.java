@@ -2,7 +2,7 @@
  * Copyright 2018 by 青岛比特信息科技有限公司 .
  * All rights reserved.
  */
-package com.zongheng.ssm.util.http;
+package com.zongheng.ssm.util.other;
 
 import javafx.scene.effect.ImageInput;
 
